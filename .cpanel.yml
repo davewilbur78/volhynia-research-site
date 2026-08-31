@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/papebblq/research.papermensch.com/
+    - /bin/cp -f index.html $DEPLOYPATH
