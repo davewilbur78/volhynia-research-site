@@ -395,6 +395,15 @@ button{font:inherit;}
 ::-webkit-scrollbar{width:10px;height:10px;}
 ::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:99px;}
 
+.sitefooter{
+  margin-top:40px;padding-top:14px;border-top:1px solid var(--line);
+  text-align:center;
+}
+.sitefooter a{
+  font-size:11px;color:var(--faint);text-decoration:none;
+}
+.sitefooter a:hover{color:var(--muted);text-decoration:underline;}
+
 @media(max-width:560px){
   .lensrow{flex-direction:column;align-items:stretch;}
   .segrow{width:100%;}
