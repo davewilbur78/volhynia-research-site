@@ -3,3 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/papebblq/research.papermensch.com/
     - /bin/cp -f index.html $DEPLOYPATH
+    - /bin/cp -f styles.css $DEPLOYPATH
+    - /bin/cp -f app.js $DEPLOYPATH
