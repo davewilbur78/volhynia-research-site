@@ -6,3 +6,9 @@ deployment:
     - /bin/cp -f styles.css $DEPLOYPATH
     - /bin/cp -f app.js $DEPLOYPATH
     - /bin/cp -f records.json $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/preview-a
+    - /bin/mkdir -p $DEPLOYPATH/preview-b
+    - /bin/mkdir -p $DEPLOYPATH/preview-c
+    - /bin/cp -f preview-a/*.html preview-a/*.css preview-a/*.js $DEPLOYPATH/preview-a/
+    - /bin/cp -f preview-b/*.html preview-b/*.css preview-b/*.js $DEPLOYPATH/preview-b/
+    - /bin/cp -f preview-c/*.html preview-c/*.css preview-c/*.js $DEPLOYPATH/preview-c/
