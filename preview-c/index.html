@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Volhynia Archive — Preview C: Middle Ground</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="hdr">
+    <div class="hdr-top">
+      <div>
+        <h1>&#x1F4DC; Volhynia Jewish Archives</h1>
+        <div class="sub">Records from the towns your family came from &mdash; Volyn Guberniya, Russian Empire, now Ukraine. <span class="variant-tag">Preview C &mdash; Middle Ground</span></div>
+      </div>
+      <button class="exportbtn" onclick="exportCSV()">&#x1F4E5; Export CSV</button>
+    </div>
+
+    <div class="searchrow">
+      <span class="sicon">&#x1F50D;</span>
+      <input id="q" type="search" placeholder="Search by town, district, year, or archive&hellip;" oninput="render()">
+    </div>
+    <div class="searchhint">Searches record descriptions and citations, not indexed personal names.</div>
+
+    <div class="filterbar">
+      <div class="ffield">
+        <label>Record type</label>
+        <select id="f-type" onchange="render()"><option value="">All types</option></select>
+      </div>
+      <div class="ffield">
+        <label>Custom tag</label>
+        <select id="f-tag" onchange="render()"><option value="">All tags</option></select>
+      </div>
+      <div class="ffield">
+        <label>Year range</label>
+        <div class="gp-yr">
+          <input id="f-y1" type="number" placeholder="From" min="1700" max="1999" oninput="render()">
+          <span>&ndash;</span>
+          <input id="f-y2" type="number" placeholder="To" min="1700" max="1999" oninput="render()">
+        </div>
+      </div>
+      <button class="gp-reset" onclick="resetAll()">&#x21BA; Reset filters</button>
+    </div>
+
+    <div class="statusline" id="statusline"></div>
+
+    <div class="pillrow">
+      <button class="pill" id="p-scanned" onclick="togglePill('scanned')">Scanned Only</button>
+      <button class="pill gold" id="p-priority" onclick="togglePill('priority')">&#x26A1; Priority</button>
+      <button class="pill" id="p-jewish" onclick="togglePill('jewish')">Jewish records</button>
+      <button class="pill gold" id="p-star" onclick="togglePill('star')">&#x2605; My saved</button>
+      <button class="pill" id="p-recent" onclick="togglePill('recent')">Added recently</button>
+    </div>
+
+    <div class="lensrow">
+      <div class="segrow" id="lenstabs">
+        <button class="segopt on" data-lens="town" onclick="setLens('town')">Town</button>
+        <button class="segopt" data-lens="district" onclick="setLens('district')">District</button>
+        <button class="segopt" data-lens="archive" onclick="setLens('archive')">Archive</button>
+      </div>
+      <button class="myresearchbtn" id="myresearchbtn" onclick="setLens('myresearch')">&#x2605; My Research</button>
+    </div>
+  </header>
+
+  <div class="changelog" id="changelog">
+    <span id="changelog-text"></span>
+    <button onclick="dismissChangelog()">Dismiss</button>
+  </div>
+
+  <main id="main"></main>
+
+</div>
+
+<div class="toast" id="toast">Saved</div>
+
+<script src="app.js"></script>
+</body>
+</html>
