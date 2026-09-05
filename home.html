@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volhynia Research</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#efece2; --surface:#faf8f1; --surface-2:#e4dfd0; --surface-3:#d8d2bf;
+  --ink:#2b2620; --muted:#6f675a; --faint:#928a7a;
+  --line:rgba(43,38,32,.12); --border:rgba(43,38,32,.20);
+  --teal:#3d6b63; --teal-ink:#1f3733; --teal-soft:rgba(61,107,99,.13);
+  --gold:#a97328; --gold-ink:#7a5420; --gold-soft:rgba(169,115,40,.15);
+  --shadow: 0 1px 2px rgba(43,38,32,.06), 0 8px 24px -12px rgba(43,38,32,.20);
+  --shadow-lg: 0 4px 8px rgba(43,38,32,.08), 0 16px 40px -16px rgba(43,38,32,.28);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1a15; --surface:#242018; --surface-2:#302b21; --surface-3:#3a3428;
+    --ink:#f0ebe0; --muted:#b3a996; --faint:#8b8271;
+    --line:rgba(240,235,224,.12); --border:rgba(240,235,224,.20);
+    --teal:#74a99d; --teal-ink:#c9e6de; --teal-soft:rgba(116,169,157,.16);
+    --gold:#d9a655; --gold-ink:#f0ce97; --gold-soft:rgba(217,166,85,.16);
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 16px 40px -16px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  min-height:100vh; display:flex; flex-direction:column;
+}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;margin:0;}
+.mono{font-family:"IBM Plex Mono","SF Mono",monospace;}
+a{color:var(--teal-ink);}
+
+.shell{max-width:880px;margin:0 auto;padding:60px 20px 40px;flex:1;width:100%;}
+
+header{margin-bottom:44px;}
+header h1{font-size:34px;font-weight:600;letter-spacing:-.01em;}
+header .sub{color:var(--muted);font-size:15px;margin-top:10px;max-width:60ch;}
+
+.grid{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr;}}
+
+.card{
+  display:block; background:var(--surface); border:1px solid var(--border);
+  border-radius:14px; padding:22px 22px 20px; text-decoration:none; color:inherit;
+  transition:border-color .12s ease, box-shadow .12s ease; position:relative;
+}
+.card:hover{border-color:var(--muted); box-shadow:var(--shadow);}
+.card .kicker{
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--teal-ink); margin-bottom:8px; display:block;
+}
+.card.gold .kicker{color:var(--gold-ink);}
+.card h2{font-size:19px; font-weight:600;}
+.card p{font-size:13px; color:var(--muted); margin:8px 0 0;}
+.card .arrow{position:absolute; top:22px; right:20px; color:var(--faint); font-size:15px;}
+
+.card.soon{opacity:.55; cursor:default;}
+.card.soon .badge{
+  display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10px;
+  padding:2px 9px; border-radius:999px; border:1px solid var(--border); color:var(--faint);
+  margin-left:8px; vertical-align:middle; text-transform:none; letter-spacing:0;
+}
+
+.about{margin-top:48px; padding-top:28px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted); max-width:65ch;}
+.about h3{font-size:13px; letter-spacing:.04em; text-transform:uppercase; font-family:"IBM Plex Mono",monospace; color:var(--faint); margin-bottom:10px; font-weight:600;}
+.about p{margin:0 0 10px;}
+
+footer{
+  border-top:1px solid var(--line); padding:20px; text-align:center;
+  font-size:11.5px; color:var(--faint);
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <header>
+    <h1>&#x1F4DC; Volhynia Research</h1>
+    <div class="sub">Jewish vital records, archival scans, and person-level transcriptions for Bilohorodka, Lechowitz, Zaslav/Iziaslav, Ostroh, and the surrounding towns of Volyn Guberniya &mdash; built for the Belohorodka Research Group and anyone tracing family through this region.</div>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="/finding-aid/">
+      <span class="kicker">Document catalog</span>
+      <h2>Volhynia Jewish Archives</h2>
+      <p>Browse and search the full record catalog &mdash; every known Jewish vital record and revision list for the region, with scans, citations, and confidence flags.</p>
+      <span class="arrow">&#x2192;</span>
+    </a>
+
+    <a class="card gold" href="/compendium/">
+      <span class="kicker">Research guide</span>
+      <h2>Master Resource Compendium</h2>
+      <p>The one-stop guide to every outside resource worth knowing about &mdash; KehilaLinks, JewishGen, Yad Vashem, Tsal Kaplun, Routes to Roots, and more, organized by town.</p>
+      <span class="arrow">&#x2192;</span>
+    </a>
+
+    <a class="card" href="/zaslav-1843/">
+      <span class="kicker">Transcription tool</span>
+      <h2>Zaslav 1843 Birth Register</h2>
+      <p>A shared, page-by-page viewer and curation tool for the Zaslav Jewish births register (DAV&#x456;O 905-3-2), Russian and Hebrew side by side.</p>
+      <span class="arrow">&#x2192;</span>
+    </a>
+
+    <div class="card soon">
+      <span class="kicker">Transcription tool <span class="badge">In progress</span></span>
+      <h2>Lakhovtsy 1816 Revision List</h2>
+      <p>The full 1816 Lechowitz household census, indexed and browsable by name, household, and page.</p>
+    </div>
+  </div>
+
+  <div class="about">
+    <h3>About this project</h3>
+    <p>This site exists because the Ukrainian archives holding these records have only recently become accessible &mdash; the result of a legal effort to open records that had been effectively sealed &mdash; and because the raw scans are in Russian and Hebrew, unindexed, and scattered across archives whose own holdings don't always match what history would predict. This project pulls that material into one place, in English, with a scan behind every citation.</p>
+    <p>Built and maintained by David Wilbur for the Belohorodka Research Group. Corrections and leads welcome.</p>
+  </div>
+</div>
+
+<footer>research.papermensch.com</footer>
+
+</body>
+</html>

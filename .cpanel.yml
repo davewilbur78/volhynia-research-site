@@ -1,14 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/papebblq/research.papermensch.com/
-    - /bin/cp -f index.html $DEPLOYPATH
-    - /bin/cp -f styles.css $DEPLOYPATH
-    - /bin/cp -f app.js $DEPLOYPATH
-    - /bin/cp -f records.json $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/preview-a
-    - /bin/mkdir -p $DEPLOYPATH/preview-b
-    - /bin/mkdir -p $DEPLOYPATH/preview-c
-    - /bin/cp -f preview-a/*.html preview-a/*.css preview-a/*.js $DEPLOYPATH/preview-a/
-    - /bin/cp -f preview-b/*.html preview-b/*.css preview-b/*.js $DEPLOYPATH/preview-b/
-    - /bin/cp -f preview-c/*.html preview-c/*.css preview-c/*.js $DEPLOYPATH/preview-c/
+    - /bin/mkdir -p $DEPLOYPATH/finding-aid
+    - /bin/cp -f finding-aid.html $DEPLOYPATH/finding-aid/index.html
+    - /bin/cp -f styles.css $DEPLOYPATH/finding-aid/
+    - /bin/cp -f app.js $DEPLOYPATH/finding-aid/
+    - /bin/cp -f records.json $DEPLOYPATH/finding-aid/
+    - /bin/cp -f home.html $DEPLOYPATH/index.html
