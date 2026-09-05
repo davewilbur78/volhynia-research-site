@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - export DEPLOYPATH=/home/papebblq/research.papermensch.com/
     - /bin/mkdir -p $DEPLOYPATH/finding-aid
     - /bin/cp -f finding-aid.html $DEPLOYPATH/finding-aid/index.html
     - /bin/cp -f styles.css $DEPLOYPATH/finding-aid/
